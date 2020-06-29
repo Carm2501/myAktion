@@ -2,21 +2,26 @@ package de.dpunkt.myaktion.controller;
 
 import de.dpunkt.myaktion.data.CampaignProducer;
 import de.dpunkt.myaktion.model.Campaign;
-import javax.enterprise.context.SessionScoped;
+import de.dpunkt.myaktion.util.Events.Deleted;
+
+import javax.enterprise.event.Event;
+import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
 
-
-@SessionScoped
+@ViewScoped
 @Named
-
-
 
 public class ListCampaignsController implements Serializable {
 
     @Inject
     private CampaignProducer campaignProducer;
+
+    @Inject @Deleted
+    private Event<Campaign> campaignDeleteEvent;
+
+    private Campaign campaignToDelete;
 
     private static final long serialVersionUID = 8693277383648025822L;
 
@@ -24,6 +29,7 @@ public class ListCampaignsController implements Serializable {
         campaignProducer.prepareAddCampaign();
         return Pages.EDIT_CAMPAIGN;
     }
+
     public String doEditCampaign(Campaign campaign) {
         campaignProducer.prepareEditCampaign(campaign);
         return Pages.EDIT_CAMPAIGN;
@@ -40,6 +46,11 @@ public class ListCampaignsController implements Serializable {
     }
 
     public void doDeleteCampaign(Campaign campaign) {
-        System.out.println("Deletion not implemented, yet!");
+        this.campaignToDelete = campaign;
+        System.out.println("Aktion zum löschen vorgemerkt");
     }
+
+    public void commitDeleteCampaign() {
+        campaignDeleteEvent.fire(campaignToDelete);
+        }
 }

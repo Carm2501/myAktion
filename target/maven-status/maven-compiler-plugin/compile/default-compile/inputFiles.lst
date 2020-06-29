@@ -1,12 +1,17 @@
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\data\CampaignProducer.java
+C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\services\CampaignServiceBean.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\ListDonationsController.java
+C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\services\MockCampaignServiceBean.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\model\Donation.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\DonateMoneyController.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\model\Campaign.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\JAXRSConfiguration.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\ping\boundary\PingResource.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\EditDonationFormController.java
+C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\util\Resources.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\ListCampaignsController.java
+C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\util\Events.java
+C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\services\CampaignService.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\Pages.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\controller\EditCampaignController.java
 C:\Users\student\ESD\Maven-Projekte\my-aktion\src\main\java\de\dpunkt\myaktion\data\CampaignListProducer.java

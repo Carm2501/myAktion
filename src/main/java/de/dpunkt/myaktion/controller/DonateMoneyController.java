@@ -1,15 +1,18 @@
 package de.dpunkt.myaktion.controller;
 
 import de.dpunkt.myaktion.model.Donation;
-import javax.enterprise.context.SessionScoped;
+import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 import java.io.Serializable;
-import java.text.MessageFormat;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-@SessionScoped
+@ViewScoped
 @Named
 public class DonateMoneyController implements Serializable {
     private static final long serialVersionUID = 5493038842003809106L;
@@ -18,7 +21,14 @@ public class DonateMoneyController implements Serializable {
     private Long campaignId;
     private Donation donation;
 
-    public DonateMoneyController() {
+    @Inject
+    private FacesContext facesContext;
+
+    @Inject
+    private Logger logger;
+
+    @PostConstruct
+    public void init() {
         this.donation = new Donation();
     }
 
@@ -55,11 +65,12 @@ public class DonateMoneyController implements Serializable {
     }
 
     public String doDonation() {
-        final FacesContext facesContext = FacesContext.getCurrentInstance();
+        logger.log(Level.INFO, "log.donateMoney.thank_you",
+                new Object[] { getDonation().getDonorName(), getDonation().getAmount() });
         final ResourceBundle resourceBundle = facesContext.getApplication().getResourceBundle(facesContext, "msg");
         final String msg = resourceBundle.getString("donateMoney.thank_you");
         facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, msg, null));
-        this.donation = new Donation();
+        init();
         return Pages.DONATE_MONEY;
     }
 }
